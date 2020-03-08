@@ -1,0 +1,106 @@
+## @file xpodha01_xkisst00_xmacha72.txt
+# @brief Časový plán projektu IVS
+# @author: xpodha01
+# @date March 2019
+
+jazyk: Python (verzia 3 a vyššie)
+jazyk dokumentacie: SK/CZ
+
+
+--------------------------------------------------------------------------
+
+Termíny:
+
+    10. 3. 2020
+        - dokončenie plánu projektu
+        - inicializacia repozitáru
+
+    15. 3. 2020
+        - vytvorenie základného rozhrania matematickej knižnice
+        - návrh matematickej knižnice
+
+    18. 3. 2020
+        - termin odovzdania plánu
+
+    30. 3. 2020
+        - vytvorenie TDD testov
+
+    5. 4. 2020
+        - GUI
+
+    12. 4. 2020
+        - vytvorenie inštalátoru, odinštalátoru
+        - Makefile
+
+    19. 4. 2020
+        - spísanie uživateľskej dokumentácie a príručky
+        - finálne testovanie, ladenie a kotrola
+        - doladenie README
+
+    22. 4. 2020
+        - odovzdanie produktu (WIS deadline)
+        - cvičné testovanie u zákazníka
+
+    25. 4. 2020
+        - vytvorenie súborov = skutecnost.txt, hodnoteni.txt, obr. debugeru
+
+    30. 4. 2020
+        - inštalácia u zákaznika (WIS datum)
+
+    8. 5. 2020
+        - samostatné spísanie problémov pri vývoji (WIS deadline)
+
+
+--------------------------------------------------------------------------
+
+Pridelenie úloh:
+    - celotýmove úlohy
+        - kontrola dátumov
+        - aktivita na komunikačných kanáloch
+        - skúšobná inštalácia produktu
+        - záverečná kontrola funkčnosti
+
+
+
+    - xmacha72 = Machač Michal
+        - návrh matematickej kninice
+        - implementacia matematickej knižnice
+        - vytvorenie Makefile
+        - návrh testov
+        - Doxygen dokumentácia knižnice
+
+
+    -xkisst00 = Kiss Tomáš
+        - implementácia profiling
+        - doxygen-Doxyfile
+        - dokumentácia profilingu
+        - spojenie GUI a matematickej knižnice
+
+
+    - xpodha01 = Viliam Podhajecký
+        - inicializácia Git repozitáru
+            > kontrola pull requestov a následný merge
+        - vytvorenie plánu projektu
+        - spísanie uživateľskej dokumentácie
+        - vytvorenie grafického rozhrania
+
+
+--------------------------------------------------------------------------
+
+Komunikační kanály:
+    - Discord
+        - Hlavný diskusný kanál. Vytvorený vlastný skupinový server. Na servery su vytvorené rôzne "roomky".
+          Každá z nich slúži na riešenie inej problematiky v projekte. Do každej roomky má prístup celý tým, aby sa dal plošne riešiť možný problém.
+
+    - Tímové stretnutia
+        - Členovia tímu sa budú stretávať aspon 2x do mesiaca, aby neboli stáke len online. Problémy sa vtedy riešia rýchlejšie a efektívnejšie.
+          Aspoň 1x mesačne po stretnuti plánujeme tímové "team-buildingy", pri ktorý sa budeme snažiť spoznaž aj mimo práce na projekte.
+
+
+--------------------------------------------------------------------------
+
+Správa verzií a hosting:
+    - systém pre správu verzií: Git
+    - hosting GitHub
+        >Pri vývoji bude repozitár súkromný (na adrese https://github.com/meile18/ivs_projekt) po dokončení projektu bude verejný
+

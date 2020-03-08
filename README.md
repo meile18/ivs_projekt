@@ -5,10 +5,11 @@ Prostredi
 Autori
 ------
 
-Nazev tymu
-- xpodha01 Viliam Podhajecký 
-- xkisst00 Tomáš Kiss 
-- xmacha72 Michal Machač  
+názov tímu: <strong>Fill team name</strong>
+
+- <strong>xkisst00</strong> Tomáš Kiss 
+- <strong>xmacha72</strong> Michal Machač  
+- <strong>xpodha01</strong> Viliam Podhajecký 
 
 Licence
 -------
