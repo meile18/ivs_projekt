@@ -13,14 +13,14 @@ Termíny:
 
     10. 3. 2020
         - dokončenie plánu projektu
-        - inicializacia repozitáru
+        - inicializácia repozitáru
 
     15. 3. 2020
         - vytvorenie základného rozhrania matematickej knižnice
         - návrh matematickej knižnice
 
     18. 3. 2020
-        - termin odovzdania plánu
+        - termín odovzdania plánu
 
     30. 3. 2020
         - vytvorenie TDD testov
@@ -33,7 +33,7 @@ Termíny:
         - Makefile
 
     19. 4. 2020
-        - spísanie uživateľskej dokumentácie a príručky
+        - spísanie užívateľskej dokumentácie a príručky
         - finálne testovanie, ladenie a kotrola
         - doladenie README
 
@@ -45,7 +45,7 @@ Termíny:
         - vytvorenie súborov = skutecnost.txt, hodnoteni.txt, obr. debugeru
 
     30. 4. 2020
-        - inštalácia u zákaznika (WIS datum)
+        - inštalácia u zákazníka (WIS dátum)
 
     8. 5. 2020
         - samostatné spísanie problémov pri vývoji (WIS deadline)
@@ -63,8 +63,8 @@ Pridelenie úloh:
 
 
     - xmacha72 = Machač Michal
-        - návrh matematickej kninice
-        - implementacia matematickej knižnice
+        - návrh matematickej knižnice 
+        - implementácia matematickej knižnice
         - vytvorenie Makefile
         - návrh testov
         - Doxygen dokumentácia knižnice
@@ -72,16 +72,16 @@ Pridelenie úloh:
 
     -xkisst00 = Kiss Tomáš
         - implementácia profiling
-        - doxygen-Doxyfile
-        - dokumentácia profilingu
+        - doxygen - Doxyfile
+        - Doxygen dokumentácia profilingu
         - spojenie GUI a matematickej knižnice
-
+        - vytvorenie inštalátoru, odinštalátoru
 
     - xpodha01 = Viliam Podhajecký
         - inicializácia Git repozitáru
             > kontrola pull requestov a následný merge
         - vytvorenie plánu projektu
-        - spísanie uživateľskej dokumentácie
+        - spísanie užívateľskej dokumentácie
         - vytvorenie grafického rozhrania
 
 
@@ -89,12 +89,12 @@ Pridelenie úloh:
 
 Komunikační kanály:
     - Discord
-        - Hlavný diskusný kanál. Vytvorený vlastný skupinový server. Na servery su vytvorené rôzne "roomky".
+        - Hlavný diskusný kanál. Vytvorený vlastný skupinový server. Na servery sú vytvorené rôzne "roomky".
           Každá z nich slúži na riešenie inej problematiky v projekte. Do každej roomky má prístup celý tým, aby sa dal plošne riešiť možný problém.
 
     - Tímové stretnutia
-        - Členovia tímu sa budú stretávať aspon 2x do mesiaca, aby neboli stáke len online. Problémy sa vtedy riešia rýchlejšie a efektívnejšie.
-          Aspoň 1x mesačne po stretnuti plánujeme tímové "team-buildingy", pri ktorý sa budeme snažiť spoznaž aj mimo práce na projekte.
+        - Členovia tímu sa budú stretávať aspoň 2x do mesiaca, aby neboli stále len online. Problémy sa vtedy riešia rýchlejšie a efektívnejšie.
+          Aspoň 1x mesačne po stretnutí plánujeme tímové "team-buildingy", pri ktorý sa budeme snažiť spoznať aj mimo práce na projekte.
 
 
 --------------------------------------------------------------------------
