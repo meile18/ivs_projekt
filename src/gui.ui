@@ -171,6 +171,9 @@ QPushButton:pressed {
       <property name="text">
        <string>pow</string>
       </property>
+      <property name="shortcut">
+       <string>^</string>
+      </property>
       <attribute name="buttonGroup">
        <string notr="true">operator_group</string>
       </attribute>
@@ -247,6 +250,9 @@ QPushButton:pressed {
       </property>
       <property name="text">
        <string>AC</string>
+      </property>
+      <property name="shortcut">
+       <string>Ctrl+Backspace</string>
       </property>
       <attribute name="buttonGroup">
        <string notr="true">operator_group</string>
@@ -444,6 +450,9 @@ QPushButton:pressed {
       </property>
       <property name="text">
        <string>CE</string>
+      </property>
+      <property name="shortcut">
+       <string>Backspace</string>
       </property>
       <attribute name="buttonGroup">
        <string notr="true">operator_group</string>
@@ -643,7 +652,7 @@ QPushButton:pressed {
        <string>=</string>
       </property>
       <property name="shortcut">
-       <string>Return, Enter</string>
+       <string>Enter</string>
       </property>
      </widget>
     </item>
@@ -875,7 +884,7 @@ QPushButton:pressed {
        <string>,</string>
       </property>
       <property name="shortcut">
-       <string>.</string>
+       <string>., ,</string>
       </property>
       <attribute name="buttonGroup">
        <string notr="true">operator_group</string>
