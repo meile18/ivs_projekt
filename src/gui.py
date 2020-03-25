@@ -9,21 +9,36 @@ class Ui(QtWidgets.QMainWindow):
     def __init__(self):
         super(Ui, self).__init__()  # Call the inherited classes __init__ method
         uic.loadUi('gui.ui', self)  # Load the .ui file
+        # Variable containing the last operation used
         self.used_operation = ""
-        self.first_value = ""
+        # Variable containing the last operation used
+        self.first_value = "0"
+        # Variable containing the result of the computation
         self.result = 0
 
+        # First variable of the computation
         self.first_input = True
+        # Button for dot was used (float conversion have to be used)
         self.dot_used = False
+        # Operation can be performed, enough variables are given
         self.make_operation = False
+        # Button for result was used, as one of the variable
         self.used_sum = False
+        # Error happened during computation
         self.error_happen = False
+        # The "CE" button was used, last entered number was cleared
         self.clear_was = False
+        # Two needed numbers for computation are given
+        self.two_numbers = False
+        # Pushed already button for numbers
+        self.num_pushed = False
+        # If factorial was the previous operation
+        self.factorial_was = False
 
+        # Connection of buttons and functions performed on click
         self.ac.clicked.connect(self.clear_all)
         self.ce.clicked.connect(self.clear_previous)
-
-        # self.sqrt = self.findChild(QtWidgets.QPushButton, 'sqrt')
+        #
         self.sqrt.clicked.connect(lambda: self.pushed_op_button("sqrt"))
         self.pow.clicked.connect(lambda: self.pushed_op_button("pow"))
         self.div.clicked.connect(lambda: self.pushed_op_button("/"))
@@ -32,7 +47,7 @@ class Ui(QtWidgets.QMainWindow):
         self.add.clicked.connect(lambda: self.pushed_op_button("+"))
         self.factorial.clicked.connect(lambda: self.pushed_op_button("!"))
         self.modulo.clicked.connect(lambda: self.pushed_op_button("%"))
-
+        #
         self.sum.clicked.connect(self.show_result)
         self.dot.clicked.connect(self.add_dot)
 
@@ -52,11 +67,22 @@ class Ui(QtWidgets.QMainWindow):
     def clear_previous(self):
         # No error happened during the previous computation
         if not self.error_happen:
-            print("first before clear "+self.first_value)
-            self.first_value = "0"
-            self.label.setText("0")
-            self.clear_was = True
-            print("clear one result "+str(self.result))
+            if self.first_input:
+                self.first_value = "0"
+                self.label.setText(self.first_value)
+            if self.two_numbers:
+                self.two_numbers = False
+                self.first_value = ""
+                self.label.setText("0")
+            if self.used_sum:
+                self.used_sum = False
+                self.first_value = "0"
+                self.label.setText("0")
+                if self.used_operation == "!":
+                    self.used_operation = ""
+
+            self.dot_used = False
+            self.num_pushed = False
         else:
             self.clear_all()
 
@@ -64,15 +90,18 @@ class Ui(QtWidgets.QMainWindow):
     # @brief Reset all class variables used in the program.
     def clear_all(self):
         self.used_operation = ""
-        self.first_value = ""
+        self.first_value = "0"
         self.used_sum = False
         self.result = 0
 
         self.first_input = True
-        print("clear all first true")
         self.dot_used = False
         self.make_operation = False
         self.error_happen = False
+        self.two_numbers = False
+        self.num_pushed = False
+        self.factorial_was = False
+
         self.label.setText("0")
 
     ##
@@ -89,21 +118,30 @@ class Ui(QtWidgets.QMainWindow):
     # @brief Shows the result of the computation.
     def show_result(self):
         # No error happened during the previous computation
+        # if not self.error_happen and (self.two_numbers or self.used_operation == "!"):
         if not self.error_happen:
-            # Perform chosen operation for factorial
-            # or with the result of the previous computation
-            if self.make_operation or (self.used_operation == "!"):
+            if self.make_operation:
                 self.perform_operation()
                 self.make_operation = False
-            else:
-                self.make_operation = True
-
-            self.used_sum = True
-            self.dot_used = False
+                if self.used_operation == "!":
+                    self.factorial_was = True
+                else:
+                    self.factorial_was = False
+            # Clearing the variables to accept the first number of new calculation
+            self.first_input = True
             self.first_value = ""
+            self.dot_used = False
+
+            # Two new numbers are needed or the prev. result and one new number
+            self.two_numbers = False
+
+            # No number was pushed
+            self.num_pushed = False
+
+            # The sum was used
+            self.used_sum = True
             self.label.setText(str(self.result))
-            print("Result is "+str(self.result)+" op is "+self.used_operation+"first is "+self.first_value)
-            self.used_operation = "+"
+
         else:
             self.clear_all()
 
@@ -111,84 +149,92 @@ class Ui(QtWidgets.QMainWindow):
     # @brief Stores the value of the pushed button for numbers.
     # @param num Number of the button which was pushed.
     def pushed_num_button(self, num):
-        # Concat pushed numbers
-        if self.clear_was:
+        # Button pushed when explicitly "0" is stored in first_value
+        if self.first_input and not self.dot_used and not self.num_pushed:
             self.first_value = num
-            self.clear_was = False
+            self.num_pushed = True
         else:
+            # Concat the values of the pushed num. buttons
             self.first_value += num
+            # self.two_numbers = True
+            # self.first_input = False
+        # Show the created number
         self.label.setText(self.first_value)
-
-        # If previous computation was completed and button for numbers is pushed
-        # clear the variables like the new input is the first number of the next computation
-        if self.used_sum:
-            self.used_sum = False
-            self.result = 0
-            self.first_input = True
-            print("self.first_input true")
+        self.make_operation = True
         print(num)
 
     ##
     # @brief Stores which operation was chosen.
     # @param op Sign of the operation button which was pushed.
     def pushed_op_button(self, op):
-        # If no error happen during previous calculation
-        if not self.error_happen and (len(self.first_value) or self.used_sum):
-            print("in op_button")
-            #
-            if self.used_sum and not self.clear_was:
-                print("if used sum ...")
-                self.first_value = self.result
-                self.first_input = True
-                self.used_sum = False
-
-            # If the first number of the computation is pressed
-            # store it into result variable, the type is based on
-            # if the dot button was pushed (float) or not (int)
-            if self.first_input or self.clear_was:
-                print("first input true")
+        if not self.error_happen:
+            # If right after the sum is used an operation button
+            # So the next computation will use the previous result
+            # example --> "prev result" + 3 = new result
+            if self.used_sum and not self.num_pushed:
                 self.first_input = False
+                # self.used_sum = False
+            # First input is made for the calculation,
+            # store the value in result because it is used as the first number
+            # when performing math. operations
+            elif self.first_input:
+                # if self.used_sum and self.num_pushed:
+                #     self.used_sum = False
+                # Convert the string into number based on that if dot was used (float)
+                # or not (int)
                 if self.dot_used:
                     self.result = float(self.first_value)
                 else:
                     self.result = int(self.first_value)
+                # Next value is going to be the next number
+                self.first_input = False
+                # Enabling to use the dot again
+                self.dot_used = False
 
-            # Store the chosen operation
+            if self.two_numbers or (self.used_operation == "!" and not self.used_sum and not self.factorial_was):
+                self.perform_operation()
+                if self.used_operation == "!":
+                    self.factorial_was = True
+                else:
+                    self.factorial_was = False
+                self.label.setText(str(self.result))
+                # pass
+                self.make_operation = False
+
+            self.two_numbers = not self.two_numbers
+            # else:
+            #     self.make_operation = True
+
+            # Storing the pushed operation button
             self.used_operation = op
 
-            # Perform operation with the result of the previous operation
-            # and the new number
-            if self.make_operation:
-                print("make op "+self.used_operation)
-                self.perform_operation()
-                self.make_operation = False
-                self.label.setText(str(self.result))
-            else:
-                self.make_operation = True
+            if self.used_sum and not self.num_pushed:
+                self.used_sum = False
 
+            # Clearing the variable to store the second number of the calculation
             self.first_value = ""
-            self.dot_used = False
-            print("Result is "+str(self.result)+" first is "+self.first_value)
+            self.num_pushed = False
         else:
-            # If error was the result of the last calculation and
-            # user want to perform operations with that result
-            # reset all variables
             self.clear_all()
-        print("end of op_button "+self.used_operation)
 
     ##
     # @brief Performing the chosen operation. Counting out the result.
     def perform_operation(self):
         try:
-            # Performing the operation. Using the needed function from matlib.py header
+            # Performing the operation. Using the needed function from matlib.py header file
             # The conversion of string to int or float is performed based on that if the
             # button for dot was used
             if self.used_operation != "!":
+                # Containing the converted number
                 second_number = 0
                 if self.dot_used:
                     second_number = float(self.first_value)
                 else:
                     second_number = int(self.first_value)
+                print("Perform operation result " + str(
+                    self.result) + " op " + self.used_operation + " second " + str(second_number))
+            else:
+                print("Perform operation result " + str(self.result) + " op " + self.used_operation)
 
             if self.used_operation == "+":
                 self.result = matlib.add(self.result, second_number)
@@ -230,6 +276,7 @@ class Ui(QtWidgets.QMainWindow):
 
 
 if __name__ == "__main__":
+    # Main application loop
     app = QtWidgets.QApplication(sys.argv)
     window = Ui()
     window.show()
