@@ -295,9 +295,10 @@ QPushButton:pressed {
        <string notr="true">QLabel {
   qproperty-alignment: 'AlignVCenter | AlignRight';
   border: none;
+  color:  rgb(211, 215, 207); 
 }
 
-background-color : white;</string>
+</string>
       </property>
       <property name="text">
        <string>0</string>
