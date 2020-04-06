@@ -1,6 +1,6 @@
 import sys
 import matlib
-from PyQt5.QtWidgets import QPushButton, QToolButton, QLabel
+from PyQt5.QtWidgets import QPushButton, QToolButton, QLabel, QMessageBox
 from PyQt5 import QtGui, QtWidgets, uic
 from PyQt5.QtCore import pyqtSlot
 
@@ -61,6 +61,34 @@ class Ui(QtWidgets.QMainWindow):
         self.num_7.clicked.connect(lambda: self.pushed_num_button("7"))
         self.num_8.clicked.connect(lambda: self.pushed_num_button("8"))
         self.num_9.clicked.connect(lambda: self.pushed_num_button("9"))
+
+        # help information
+        self.help.clicked.connect(self.help_message)
+
+        # setting window icon
+        self.setWindowIcon(QtGui.QIcon("icon_calculator.xpm"))
+
+    ##
+    # @brief Show help information about the usage of the calculator
+    def help_message(self):
+        # popup message
+        msg = QMessageBox()
+        # title of the window
+        msg.setWindowTitle("Information about usage")
+        # text with information
+        msg.setText("Test textttttt")
+        # setting the shown icon
+        msg.setIcon(QMessageBox.Information)
+        # "OK" button is going to bo shown
+        msg.setStandardButtons(QMessageBox.Ok)
+        msg.setDefaultButton(QMessageBox.Ok)
+        # fixing the little rex "X" button to close the window !!
+        msg.setEscapeButton(QMessageBox.Ok)
+
+        msg.setInformativeText("more info")
+        msg.setDetailedText("detailed information")
+        # showing the message
+        x = msg.exec_()
 
     ##
     # @brief Clear last pushed number
@@ -123,10 +151,7 @@ class Ui(QtWidgets.QMainWindow):
             if self.make_operation:
                 self.perform_operation()
                 self.make_operation = False
-                if self.used_operation == "!":
-                    self.factorial_was = True
-                else:
-                    self.factorial_was = False
+
             # Clearing the variables to accept the first number of new calculation
             self.first_input = True
             self.first_value = ""
@@ -143,7 +168,8 @@ class Ui(QtWidgets.QMainWindow):
             self.label.setText(str(self.result))
 
         else:
-            self.clear_all()
+            self.label.setText(str(self.result))
+            # self.clear_all()
 
     ##
     # @brief Stores the value of the pushed button for numbers.
@@ -156,8 +182,7 @@ class Ui(QtWidgets.QMainWindow):
         else:
             # Concat the values of the pushed num. buttons
             self.first_value += num
-            # self.two_numbers = True
-            # self.first_input = False
+
         # Show the created number
         self.label.setText(self.first_value)
         self.make_operation = True
@@ -178,8 +203,6 @@ class Ui(QtWidgets.QMainWindow):
             # store the value in result because it is used as the first number
             # when performing math. operations
             elif self.first_input:
-                # if self.used_sum and self.num_pushed:
-                #     self.used_sum = False
                 # Convert the string into number based on that if dot was used (float)
                 # or not (int)
                 if self.dot_used:
@@ -191,19 +214,24 @@ class Ui(QtWidgets.QMainWindow):
                 # Enabling to use the dot again
                 self.dot_used = False
 
-            if self.two_numbers or (self.used_operation == "!" and not self.used_sum and not self.factorial_was):
+            if op == "!":
+                self.used_operation = op
                 self.perform_operation()
-                if self.used_operation == "!":
-                    self.factorial_was = True
-                else:
-                    self.factorial_was = False
+                self.factorial_was = True
+
+                # self.label.setText(str(self.result))
+
+                self.make_operation = False
+
+            elif self.two_numbers and self.num_pushed:
+                self.perform_operation()
+
                 self.label.setText(str(self.result))
                 # pass
                 self.make_operation = False
+                self.num_pushed = False
 
             self.two_numbers = not self.two_numbers
-            # else:
-            #     self.make_operation = True
 
             # Storing the pushed operation button
             self.used_operation = op
