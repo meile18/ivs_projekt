@@ -8,12 +8,12 @@
 # @author Tomas Kiss (xkisst00)
 
 import sys
-from random import random
-from random import randint
 import matlib
+from random import random
+# from random import randint
 
-import cProfile as profile
-import pstats
+# import cProfile as profile
+# import pstats
 
 
 ##
@@ -47,8 +47,7 @@ def arithmetic_mean(values):
     sum_of_values = 0
     # sum of all values
     for value in values:
-        matlib.add(sum_of_values, value)
-
+        sum_of_values = matlib.add(sum_of_values, value)
     # number of values in list
     n = len(values)
     return matlib.div(sum_of_values, n)
@@ -59,7 +58,7 @@ def arithmetic_mean(values):
 # @return Computed standard deviation.
 def solve_deviation():
     # generating random number into the input file
-    #generate_random_numbers(1000)
+    # generate_random_numbers(1000)
 
     values = list()
     data = sys.stdin.readlines()
@@ -83,22 +82,23 @@ def solve_deviation():
 
     sum_of_values = 0
     # sum of all values
-    for value in values:
-        matlib.add(sum_of_values, value)
+    for value in pow_values:
+        sum_of_values = matlib.add(sum_of_values, value)
 
     # returning the computed standard deviation
-    return matlib.sqrt(matlib.div(sum_of_values - len(values)*matlib.pow(mean, 2), len(values)-1), 2)
+    return matlib.sqrt(matlib.div(matlib.sub(sum_of_values, matlib.mul(len(values), matlib.pow(mean, 2))),
+                                  matlib.sub(len(values), 1)), 2)
 
 
 if __name__ == '__main__':
     # commented function calls are used for profiling
-    pr = profile.Profile()
-    pr.disable()
-    pr.enable()
+    # pr = profile.Profile()
+    # pr.disable()
+    # pr.enable()
 
-    # print(solve_deviation())
-    solve_deviation()
+    print(solve_deviation())
 
-    pr.disable()
-    pr.print_stats()
-    pstats.Stats('profile10.profile')
+    # pr.disable()
+    # pr.print_stats()
+    # pstats.Stats('profile10.profile')
+
