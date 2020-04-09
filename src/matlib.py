@@ -48,10 +48,13 @@ def div(x, y):
 # @param n Number to calculate factorial for.
 # @return Factorial of n.
 def factorial(n):
-    if n > 1:
-        return n * factorial(n-1)
+    if isinstance(n, int):
+        if n > 1:
+            return n * factorial(n-1)
+        else:
+            return 1
     else:
-        return 1
+        raise ValueError("n has to be natural number")
 
 ##
 # @brief Raises x to the power of n.
