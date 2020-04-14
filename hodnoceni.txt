@@ -1,4 +1,4 @@
-xpodha01
-xkisst00
-xmacha72
+xpodha01 100
+xkisst00 100
+xmacha72 100 (matematicka knihovna, doxygen, testy, dokumentace)
 
