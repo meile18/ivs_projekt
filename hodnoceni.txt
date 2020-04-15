@@ -1,4 +1,4 @@
 xpodha01 100
-xkisst00 100
+xkisst00 100 (profiling, instalator, spojenie GUI a mat. knihovny, mockupy)
 xmacha72 100 (matematicka knihovna, doxygen, testy, dokumentace)
 

@@ -1,2 +1,5 @@
-Situace ohledne covid-19 nam narusila planovana setkani. Ty nahradily skupinove hovory za vyuziti aplikace Discord.
 Kazdy z clenu tymu svedomite plnil svou praci, kterou si vybral na prvni schuzce tymu, kterou bylo mozne jeste uskutecnit nazivo.
+Pri vyskytu nejakych problemov alebo otazok sme sa obratili na ostatnych clenov tymu a vdaka online komunikacie sme ich vedeli rychlo a efektyvne vyriesit.
+
+Nie vzdy boli presne dodrzane stanovene terminy, vytvorilo sa mensie spozdenie, ktore sa ale podarilo casom eliminovat.
+Kalkulacka bola implementovana sice podla poziadavkov, ale na koniec nas napadli dalsie moznosti, ktore by mohli vylepsit a rozsirit funkcionalitu aplikacie a zjednodusit pracu uzivatela. Tieto vylepsenia su vyditelne na obrazkoch mockupu dalsej verzie.
