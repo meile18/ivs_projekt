@@ -1,6 +1,6 @@
 Calculator!
 --------
-![Main Picture](https://github.com/meile18/ivs_projekt/tree/master/documentation/img/main_calculator.png)
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
 
 Prostredie
 ---------
