@@ -2,32 +2,32 @@ Calculator!
 --------
 ![Image of Yaktocat](https://github.com/meile18/ivs_projekt/blob/master/documentation/img/main_calculator.png)
 
-Prostredie
+Prostředí
 ---------
-Táto aplikácia je vyvíjaná pre prostredie `Ubuntu 18.04`
+`Ubuntu 18.04`
 
 
-Inštalácia a stiahnute balíčku
+Instalace a stáhnutí balíčku
 ---------
-Stiahnutie a inštalácia Calculator:
+Stáhnutí a instalace Calculator:
 
-    wget https://github.com/meile18/ivs_projekt/blob/master/src/calculator_2.0_amd64.deb
+    wget https://github.com/meile18/ivs_projekt/blob/master/src/calculator_1.0_amd64.deb
     sudo dpkg -i calculator_1.0_amd64.deb
 
-pre spustenie zadajte:
+aplikaci je možné spustit pomocí:
 
     calculator
 
-Odinštalátor:
+Odinstalace:
 ------
-pre odinstalovanie balíčku `calculator` zadajte príkaz
+pro odinstalaci balíčku `calculator` zadejte příkaz
 
     sudo dpkg -r calculator_1.0_amd64.deb
 
-Autori
+Autoři
 ------
 
-názov tímu: <strong>Fill team name</strong>
+název týmu: <strong>Fill team name</strong>
 
 - <strong>xkisst00</strong> Tomáš Kiss
 - <strong>xmacha72</strong> Michal Machač
@@ -36,11 +36,11 @@ názov tímu: <strong>Fill team name</strong>
 
 Vývoj
 ------
-Ak máte záujem sa podielat na vývoji Calculator, tak zadajte:
+Pokud máte zájem podílet se na vývoji aplikace Calculator, stačí si naklonovat repozitář:
 
-    git clone https://github.com/meile18/ivs_projekt.git
+    git clone https://github.com/meile18/ivs_projekt.git    
 
-Licencia
+Licence
 -------
 
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
