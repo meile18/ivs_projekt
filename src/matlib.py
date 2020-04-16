@@ -8,6 +8,7 @@
 #  Naming conventions for operands available on:
 #  https://en.wikipedia.org/wiki/Multiplication
 
+
 ##
 # @brief Adds two numbers together.
 # @param x Augend.
@@ -15,6 +16,7 @@
 # @return Sum of x and y.
 def add(x, y):
     return x + y
+
 
 ##
 # @brief Subtracts y from x.
@@ -24,6 +26,7 @@ def add(x, y):
 def sub(x, y):
     return x - y
 
+
 ##
 # @brief Multiplies two numbers.
 # @param x Multiplier.
@@ -31,6 +34,7 @@ def sub(x, y):
 # @return Product of x and y.
 def mul(x, y):
     return x * y
+
 
 ##
 # @brief Divides x by y.
@@ -42,6 +46,7 @@ def div(x, y):
         raise ZeroDivisionError
     else:
         return x / y
+
 
 ##
 # @brief Calculates factorial of given number.
@@ -56,6 +61,7 @@ def factorial(n):
     else:
         raise ValueError("n has to be natural number")
 
+
 ##
 # @brief Raises x to the power of n.
 # @param x Base.
@@ -66,6 +72,7 @@ def pow(x, n):
         return x ** n
     else:
         raise ValueError("n has to be natural number")
+
 
 ##
 # @brief Calculates nth root of x.
