@@ -30,24 +30,40 @@ SRC=standard_deviation.py
 DATA_INPUT=data.txt
 TESTS=tests.py
 MATLIB=matlib.py
+CALCULATOR=calculator.py
 PROFILER=cProfile
 PROFILER_OUTPUT=profile.txt
+
+ARCHIVE=../../xmacha72
+DOC=$(ARCHIVE)/doc
+INSTALL=$(ARCHIVE)/install
+REPO=$(ARCHIVE)/repo
 
 all: ## project "compilation"
 	$(PYTHON) $(SRC) <$(DATA_INPUT)
 
-pack: clean ## creating .zip file
+pack: doc ## create .zip file
+	mkdir $(ARCHIVE)
+	mkdir $(DOC)
+	mkdir $(INSTALL) 
+	mkdir $(REPO)
+	cp -r doc/html $(DOC)
+	cp calculator_1.0_amd64.deb $(INSTALL)
+	cp -r ../../ivs_projekt/. $(REPO)
+	cd $(ARCHIVE) && zip -r xmacha72.zip . && mv xmacha72.zip ..
 
-clean: ## deleting all temporary files
+clean: ## delete all temp files
+	rm -r doc
+	rm -rf ../../xmacha72
 
-test: ## running tests on mathematical library
+test: ## run tests
 	$(PYTHON) $(TESTS)
 
-doc: ## creating documentation with Doxygen
+doc: ## generate Doxygen documentation
 	doxygen
 
-run: ## running the calculator
-	$(PYTHON) $(MATLIB)
+run: ## run the calculator
+	$(PYTHON) $(CALCULATOR)
 
-profile: ## running the program to compute the standard deviation and profiling the program
+profile: ## compute the standard deviation and profile the program
 	$(PYTHON) -m $(PROFILER) -o $(PROFILER_OUTPUT) $(SRC) <$(DATA_INPUT)

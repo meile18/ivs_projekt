@@ -1,6 +1,6 @@
 Calculator!
 --------
-![Image of Yaktocat](https://github.com/meile18/ivs_projekt/blob/master/documentation/img/main_calculator.png)
+![Image of Calculator](https://github.com/meile18/ivs_projekt/blob/master/src/imgReadme/main_calculator.png)
 
 Prostředí
 ---------
@@ -11,7 +11,7 @@ Instalace a stáhnutí balíčku
 ---------
 Stáhnutí a instalace Calculator:
 
-    wget https://github.com/meile18/ivs_projekt/blob/master/src/calculator_1.0_amd64.deb
+    wget https://github.com/meile18/ivs_projekt/raw/master/src/calculator_1.0_amd64.deb
     sudo dpkg -i calculator_1.0_amd64.deb
 
 aplikaci je možné spustit pomocí:
@@ -38,7 +38,7 @@ Vývoj
 ------
 Pokud máte zájem podílet se na vývoji aplikace Calculator, stačí si naklonovat repozitář:
 
-    git clone https://github.com/meile18/ivs_projekt.git    
+    git clone https://github.com/meile18/ivs_projekt.git
 
 Licence
 -------
