@@ -3,11 +3,47 @@ import matlib
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5 import QtGui, QtWidgets, uic
 
+##
+# @file calculator.py
+# @brief Implementation of the calculator logic and its connection with GUI.
+# @author Tomas Kiss (xkisst00)
+
+# Content of main page in Doxygen generated documentation 
+
+##
+# @mainpage Simple calculator project
+# @section Introduction
+#
+# This project was created for IVS in 2020.
+# Implementation language is Python. The user interface was created with PyQt5.
+# Supported operation system is Ubuntu 18.04.
+# @section authors Authors
+#
+# - xkisst00 Tomáš Kiss
+# - xmacha72 Michal Machač
+# - xpodha01 Viliam Podhajecký
+#
+# @section Installation
+#
+# @subsection Step 1: Download debian package
+#  - wget https://github.com/meile18/ivs_projekt/raw/master/src/calculator_1.0_amd64.deb
+# @subsection BStep 2: Install application
+#  - sudo dpkg -i calculator_1.0_amd64.deb
+#
+# @section Uninstallation
+#
+# @subsection CStep 1: Uninstall application
+#  - sudo dpkg -r calculator
+# @section licence Licence
+# GPL v3 (https://www.gnu.org/licenses/gpl-3.0)
+
 
 class Ui(QtWidgets.QMainWindow):
     def __init__(self):
+        ##
         # Call the inherited classes __init__ method
         super(Ui, self).__init__()
+        ##
         # Load the .ui file
         uic.loadUi('gui.ui', self)
         # Variable containing the last operation used

@@ -5,6 +5,12 @@
 ## @package matlib
 #  Documentation for this package.
 
+##
+# @file matlib.py
+# @brief Mathematical library implementing basic mathematical operations.
+# @author Michal Machač (xmacha72)
+
+
 #  Naming conventions for operands available on:
 #  https://en.wikipedia.org/wiki/Multiplication
 

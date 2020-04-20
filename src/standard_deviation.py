@@ -9,11 +9,14 @@
 
 import sys
 import matlib
-from random import random
-# from random import randint
 
-# import cProfile as profile
-# import pstats
+# If true, function calls are used for profiling
+profile_bool = False
+
+if profile_bool:
+    from random import random
+    import cProfile as profile
+    import pstats
 
 
 ##
@@ -31,7 +34,6 @@ def generate_random_numbers(number):
     max = 1000
     min = -1000
     for a in range(number):
-        # numbers_file.write(str(randint(-1000, 1000)))
         numbers_file.write(str(random()*(max - min) + min))
         if a != 999:
             numbers_file.write(str('\n'))
@@ -91,14 +93,17 @@ def solve_deviation():
 
 
 if __name__ == '__main__':
-    # commented function calls are used for profiling
-    # pr = profile.Profile()
-    # pr.disable()
-    # pr.enable()
+    # Starting to profile the program if profile_bool is True
+    if profile_bool:
+        pr = profile.Profile()
+        pr.disable()
+        pr.enable()
 
+    # Performing the calculation and printing out the result
     print(solve_deviation())
 
-    # pr.disable()
-    # pr.print_stats()
-    # pstats.Stats('profile10.profile')
+    if profile_bool:
+        pr.disable()
+        pr.print_stats()
+        pstats.Stats('profile10.profile')
 
