@@ -2,6 +2,12 @@
 # Author: Michal Machač, xmacha72
 # Date: 21.02.2020
 
+##
+# @file tests.py
+# @brief Tests used to control the functionality of the mathematical library.
+# @author Michal Machač (xmacha72)
+
+
 import unittest
 import matlib
 
