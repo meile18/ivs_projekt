@@ -22,7 +22,7 @@ Odinstalace:
 ------
 pro odinstalaci balíčku `calculator` zadejte příkaz
 
-    sudo dpkg -r calculator_1.0_amd64.deb
+    sudo dpkg -r calculator
 
 Autoři
 ------
