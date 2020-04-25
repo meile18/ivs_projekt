@@ -1,6 +1,6 @@
 Calculator!
 --------
-![Image of Calculator](https://github.com/meile18/ivs_projekt/blob/master/src/imgReadme/main_calculator.png)
+![Image of Calculator](https://github.com/meile18/ivs_projekt/blob/master/screenshot.png)
 
 Prostředí
 ---------

@@ -1,4 +1,3 @@
-xpodha01 100
+xpodha01 100 (vytvorenie časového plánu, správa Github-u, dokumentacia, návrh GUI, README)
 xkisst00 100 (profiling, instalator, spojenie GUI a mat. knihovny, mockupy)
 xmacha72 100 (matematicka knihovna, doxygen, testy, dokumentace)
-
