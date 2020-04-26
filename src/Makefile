@@ -9,7 +9,7 @@ CALCULATOR=calculator.py
 PROFILER=cProfile
 PROFILER_OUTPUT=profile.txt
 
-ARCHIVE=../../xpodha01_xkisst00_xmacha72
+ARCHIVE=../../xmacha72_xpodha01_xkisst00
 DOC=$(ARCHIVE)/doc
 INSTALL=$(ARCHIVE)/install
 REPO=$(ARCHIVE)/repo
@@ -29,12 +29,12 @@ pack: doc
 	cp -r doc/html $(DOC)
 	cp calculator_1.0_amd64.deb $(INSTALL)
 	cp -r ../../ivs_projekt/. $(REPO)
-	cd $(ARCHIVE) && zip -r xpodha01_xkisst00_xmacha72.zip . && mv xpodha01_xkisst00_xmacha72.zip ..
+	cd $(ARCHIVE) && cd .. && zip -r  xmacha72_xpodha01_xkisst00.zip ./xmacha72_xpodha01_xkisst00
 
 # delete all temp files
 clean:
 	rm -r doc
-	rm -rf ../../xpodha01_xkisst00_xmacha72
+	rm -rf ../../xmacha72_xpodha01_xkisst00
 
 # run tests
 test:
